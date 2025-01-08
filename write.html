@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Write - BlogSpace</title>
+        <link rel="stylesheet" href="./style/write.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        />
+    </head>
+    <body>
+        <nav>
+            <div class="nav-container">
+                <a href="/" class="logo">BlogSpace</a>
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/write.html" class="active">Write</a>
+                    <a href="/contact.html">Contact</a>
+                    <button id="theme-toggle" class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+            <div class="container">
+                <div class="editor-container">
+                    <h1>Create New Post</h1>
+                    <form id="post-form">
+                        <div class="form-group">
+                            <label for="title">Title</label>
+                            <input
+                                type="text"
+                                id="title"
+                                required
+                                placeholder="Enter your post title"
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="category">Category</label>
+                            <select id="category" required>
+                                <option value="">Select a category</option>
+                                <option value="technology">Technology</option>
+                                <option value="lifestyle">Lifestyle</option>
+                                <option value="travel">Travel</option>
+                                <option value="food">Food</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Content</label>
+                            <div class="editor-toolbar">
+                                <button
+                                    type="button"
+                                    data-command="bold"
+                                    title="Bold"
+                                >
+                                    <i class="fas fa-bold"></i>
+                                </button>
+                                <button
+                                    type="button"
+                                    data-command="italic"
+                                    title="Italic"
+                                >
+                                    <i class="fas fa-italic"></i>
+                                </button>
+                                <button
+                                    type="button"
+                                    data-command="underline"
+                                    title="Underline"
+                                >
+                                    <i class="fas fa-underline"></i>
+                                </button>
+                                <button
+                                    type="button"
+                                    data-command="h1"
+                                    title="Heading 1"
+                                >
+                                    H1
+                                </button>
+                                <button
+                                    type="button"
+                                    data-command="h2"
+                                    title="Heading 2"
+                                >
+                                    H2
+                                </button>
+                                <button
+                                    type="button"
+                                    data-command="insertUnorderedList"
+                                    title="Bullet List"
+                                >
+                                    <i class="fas fa-list"></i>
+                                </button>
+                            </div>
+                            <div id="editor" contenteditable="true"></div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="secondary-btn">
+                                Save Draft
+                            </button>
+                            <button type="submit" class="primary-btn">
+                                Publish
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>BlogSpace</h3>
+                        <p>Share your stories with the world.</p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <a href="/">Home</a>
+                        <a href="/write.html">Write</a>
+                        <a href="/contact.html">Contact</a>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Connect</h3>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 BlogSpace. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/theme.js"></script>
+        <script src="js/editor.js"></script>
+    </body>
+</html>

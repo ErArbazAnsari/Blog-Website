@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BlogSpace - Home</title>
+        <link rel="stylesheet" href="./style/index.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        />
+    </head>
+    <body>
+        <nav>
+            <div class="nav-container">
+                <a href="/" class="logo">BlogSpace</a>
+                <div class="nav-links">
+                    <a href="/" class="active">Home</a>
+                    <a href="/write.html">Write</a>
+                    <a href="/contact.html">Contact</a>
+                    <button id="theme-toggle" class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <header class="hero">
+            <div class="hero-content">
+                <h1>Welcome to BlogSpace</h1>
+                <p>Share your thoughts with the world</p>
+                <a href="/write.html" class="cta-button">Start Writing</a>
+            </div>
+        </header>
+
+        <main>
+            <div class="container">
+                <div class="posts-header">
+                    <h2>Latest Posts</h2>
+                    <div class="posts-filter">
+                        <input
+                            type="text"
+                            id="search"
+                            placeholder="Search posts..."
+                        />
+                        <select id="sort">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="posts-grid"></div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>BlogSpace</h3>
+                        <p>Share your stories with the world.</p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <a href="/">Home</a>
+                        <a href="/write.html">Write</a>
+                        <a href="/contact.html">Contact</a>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Connect</h3>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 BlogSpace. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/theme.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
