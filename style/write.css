@@ -3,7 +3,7 @@
     background-color: var(--light-bg);
     padding: 2rem;
     border-radius: 8px;
-    max-width: 1080px;
+    max-width: 1000px;
     margin: 0 auto;
     margin-top: 2rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -70,7 +70,7 @@
     padding: 1rem;
     border-radius: 5px;
     background-color: #fff;
-    color: var(--text-color);
+    color: black;
     font-size: 1rem;
     overflow-y: auto;
 }
@@ -86,36 +86,6 @@
     justify-content: flex-end;
     gap: 1rem;
 }
-
-.secondary-btn,
-.primary-btn {
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.secondary-btn {
-    background-color: var(--light-bg);
-    color: var(--text-color);
-}
-
-.secondary-btn:hover {
-    background-color: var(--dark-bg);
-    color: #fff;
-}
-
-.primary-btn {
-    background-color: var(--primary-color);
-    color: #fff;
-}
-
-.primary-btn:hover {
-    background-color: #0056b3;
-}
-
 
 .main-btn {
     background-color: var(--primary-color);

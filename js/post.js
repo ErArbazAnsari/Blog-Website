@@ -27,10 +27,4 @@ document.addEventListener("DOMContentLoaded", () => {
     ).toLocaleDateString();
     document.getElementById("post-category").textContent = post.category;
     document.getElementById("post-content").innerHTML = post.content;
-
-    // go back button functionality
-    const buttonRef = document.getElementById("back-button");
-    buttonRef.addEventListener("click", () => {
-        window.history.back();
-    });
 });

@@ -1,13 +1,58 @@
-async function getUsersData() {
-    // i want to get the from ../data/users.json
-    // fetch the data from the file
-    const data = await fetch("../data/users.json");
-    const users = await data.json();
-    console.log(users);
-    return users;
-}
+// Fetch users data from users.json
+const getUsersData = async () => {
+    try {
+        const response = await fetch("../data/users.json");
+        if (!response.ok) throw new Error("Failed to fetch users data");
+        const users = await response.json();
+        return users;
+    } catch (error) {
+        console.error("Error fetching users data:", error);
+        return [];
+    }
+};
 
-const users = getUsersData();
+// Save users data to users.json
+// const saveUsersData = async (users) => {
+//     try {
+//         await fetch("../server.js", {
+//             method: "POST",
+//             headers: {
+//                 "Content-Type": "application/json",
+//             },
+//             body: JSON.stringify(users),
+//         });
+//     } catch (error) {
+//         console.error("Error saving users data:", error);
+//     }
+// };
+
+// Fetch posts data from posts.json
+const getPostsData = async () => {
+    try {
+        const response = await fetch("../data/posts.json");
+        if (!response.ok) throw new Error("Failed to fetch posts data");
+        const posts = await response.json();
+        return posts;
+    } catch (error) {
+        console.error("Error fetching posts data:", error);
+        return [];
+    }
+};
+
+// Save posts data to posts.json
+// const savePostsData = async (posts) => {
+//     try {
+//         await fetch("../data/posts.json", {
+//             method: "POST",
+//             headers: {
+//                 "Content-Type": "application/json",
+//             },
+//             body: JSON.stringify(posts),
+//         });
+//     } catch (error) {
+//         console.error("Error saving posts data:", error);
+//     }
+// };
 
 // Auth state management
 function isLoggedIn() {
@@ -26,14 +71,13 @@ function logout() {
 // Handle login form
 const loginForm = document.getElementById("login-form");
 if (loginForm) {
-    loginForm.addEventListener("submit", (e) => {
+    loginForm.addEventListener("submit", async (e) => {
         e.preventDefault();
 
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
 
-        // Get users from localStorage
-        const users = JSON.parse(localStorage.getItem("users")) || [];
+        const users = await getUsersData();
         const user = users.find(
             (u) => u.email === email && u.password === password
         );
@@ -43,7 +87,7 @@ if (loginForm) {
                 "user",
                 JSON.stringify({
                     id: user.id,
-                    name: user.name,
+                    name: user.fullName,
                     email: user.email,
                 })
             );
@@ -57,79 +101,115 @@ if (loginForm) {
 // Handle registration form
 const registerForm = document.getElementById("register-form");
 if (registerForm) {
-    registerForm.addEventListener("submit", (e) => {
+    registerForm.addEventListener("submit", async (e) => {
         e.preventDefault();
 
         const name = document.getElementById("name").value;
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
 
-        // Get existing users
-        const users = JSON.parse(localStorage.getItem("users")) || [];
+        let users = await getUsersData();
 
-        // Check if email already exists
-        if (users.some((user) => user.email === email)) {
-            alert("Email already registered");
+        const userExists = users.some((u) => u.email === email);
+        if (userExists) {
+            alert("User with this email already exists");
             return;
         }
 
-        // Create new user
         const user = {
             id: Date.now(),
-            name,
+            fullName: name,
             email,
             password,
         };
 
-        // Save user
         users.push(user);
-        localStorage.setItem("users", JSON.stringify(users));
+        // await saveUsersData(users);
 
-        // Auto login
         localStorage.setItem(
             "user",
             JSON.stringify({
                 id: user.id,
-                name: user.name,
+                name: user.fullName,
                 email: user.email,
             })
         );
-
+        alert("Registration successful :)");
         window.location.href = "/";
     });
 }
 
-// Update navigation based on auth state
-function updateNavigation() {
-    const navLinks = document.querySelector(".nav-links");
-    if (!navLinks) return;
+// Handle post submission form
+const postForm = document.getElementById("post-form");
+if (postForm) {
+    postForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
 
-    const user = getCurrentUser();
+        const title = document.getElementById("title").value;
+        const content = document.getElementById("content").value;
+        const user = getCurrentUser();
 
-    if (user) {
-        navLinks.innerHTML = `
-            <a href="/">Home</a>
-            <a href="/write.html">Write</a>
-            <a href="/contact.html">Contact</a>
-            <span class="user-name">${user.name}</span>
-            <button onclick="logout()" class="logout-btn">Logout</button>
-            <button id="theme-toggle" class="theme-toggle">
-                <i class="fas fa-moon"></i>
-            </button>
-        `;
-    } else {
-        navLinks.innerHTML = `
-            <a href="/">Home</a>
-            <a href="/login.html">Login</a>
-            <a href="/register.html">Register</a>
-            <button id="theme-toggle" class="theme-toggle">
-                <i class="fas fa-moon"></i>
-            </button>
-        `;
-    }
+        if (!user) {
+            alert("You must be logged in to submit a post");
+            return;
+        }
+
+        let posts = await getPostsData();
+
+        const post = {
+            id: Date.now(),
+            title,
+            content,
+            author: user.name,
+            userId: user.id,
+        };
+
+        posts.push(post);
+        await savePostsData(posts);
+
+        alert("Post submitted successfully");
+        window.location.href = "/";
+    });
 }
+
+// View posts
+const viewPosts = async () => {
+    const posts = await getPostsData();
+    localStorage.setItem("posts", JSON.stringify(posts));
+    // Render posts (example rendering logic)
+    const postsContainer = document.getElementById("posts-container");
+    if (postsContainer) {
+        postsContainer.innerHTML = posts
+            .map(
+                (post) =>
+                    `<div class="post">
+                        <h2>${post.title}</h2>
+                        <p>${post.content}</p>
+                        <small>By ${post.author}</small>
+                    </div>`
+            )
+            .join("");
+    }
+};
+
+// Update navigation
+const updateNavigation = () => {
+    console.log("updateNavigation");
+    const navLinks = document.getElementsByClassName("nav-link");
+    const user = getCurrentUser();
+    if (user) {
+        const logoutElement = document.createElement("a");
+        logoutElement.href = "#";
+        logoutElement.innerText = "Logout";
+        // append logoutElement to navLinks
+        navLinks[0].parentNode.appendChild(logoutElement);
+    }
+};
 
 // Initialize auth state
 document.addEventListener("DOMContentLoaded", () => {
     updateNavigation();
+    if (document.getElementById("posts-container")) {
+        viewPosts();
+    }
 });

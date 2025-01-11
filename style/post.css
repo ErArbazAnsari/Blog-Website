@@ -1,4 +1,9 @@
 /* Main Content */
+.main-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
 .blog-post {
     margin-top: 2rem;
     background-color: var(--light-bg);
@@ -87,4 +92,9 @@ span {
 .main-btn:hover {
     background-color: var(--text-color);
     color: var(--light-bg);
+}
+
+.back-btn {
+    display: flex;
+    justify-content: center;
 }
