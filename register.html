@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Register - BlogSpace</title>
+        <title>Register - BlogLamp</title>
+        <link rel="stylesheet" href="./style/global.css" />
         <link rel="stylesheet" href="./style/register.css" />
         <link
             rel="stylesheet"
@@ -11,81 +12,98 @@
         />
     </head>
     <body>
-        <nav>
-            <div class="nav-container">
-                <a href="/" class="logo">BlogSpace</a>
-                <div class="nav-links">
-                    <a href="/" class="active">Home</a>
-                    <a href="/write.html">Write</a>
-                    <a href="/contact.html">Contact</a>
-                    <button id="theme-toggle" class="theme-toggle">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                </div>
-            </div>
-        </nav>
-
-        <main>
-            <div class="auth-container">
-                <div class="auth-box">
-                    <h1>Create Account</h1>
-                    <form id="register-form" class="auth-form">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" required />
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" required />
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input
-                                type="password"
-                                id="password"
-                                required
-                                minlength="6"
-                            />
-                        </div>
-                        <button type="submit" class="primary-btn w-full">
-                            Register
+        <div class="container">
+            <nav>
+                <div class="nav-container">
+                    <a href="/" class="logo">BlogLamp</a>
+                    <div class="nav-links">
+                        <a href="/" class="active">Home</a>
+                        <a href="/login.html">Login</a>
+                        <a href="/register.html" class="active">Register</a>
+                        <button id="theme-toggle" class="theme-toggle">
+                            <i class="fas fa-moon"></i>
                         </button>
-                    </form>
-                    <p class="auth-redirect">
-                        Already have an account? <a href="/login.html">Login</a>
-                    </p>
+                    </div>
                 </div>
-            </div>
-        </main>
+            </nav>
 
-        <footer>
-            <div class="container">
+            <main>
+                <div class="auth-container">
+                    <div class="auth-box">
+                        <h1>Create Account</h1>
+                        <form id="register-form" class="auth-form">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input
+                                    type="password"
+                                    id="password"
+                                    required
+                                    minlength="6"
+                                />
+                            </div>
+                            <button type="submit" class="main-btn">
+                                Register
+                            </button>
+                        </form>
+                        <p class="auth-redirect">
+                            Already have an account?
+                            <a href="/login.html">Login</a>
+                        </p>
+                    </div>
+                </div>
+            </main>
+
+            <footer>
                 <div class="footer-content">
                     <div class="footer-section">
-                        <h3>BlogSpace</h3>
-                        <p>Share your stories with the world.</p>
+                        <h3>BlogLamp</h3>
+                        <p>Share your stories with the world anonymous</p>
                     </div>
                     <div class="footer-section">
                         <h3>Quick Links</h3>
-                        <a href="/">Home</a>
-                        <a href="/write.html">Write</a>
-                        <a href="/contact.html">Contact</a>
+                        <div class="footer-links">
+                            <a href="/">Home</a>
+                            <a href="/write.html">Write</a>
+                            <a href="/contact.html">Contact</a>
+                        </div>
                     </div>
                     <div class="footer-section">
                         <h3>Connect</h3>
                         <div class="social-links">
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-github"></i></a>
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a
+                                href="https://www.x.com/erarbazansari"
+                                target="_blank"
+                                ><i class="fab fa-twitter"></i
+                            ></a>
+                            <a
+                                href="https://www.github.com/erarbazansari"
+                                target="_blank"
+                                ><i class="fab fa-github"></i
+                            ></a>
+                            <a
+                                href="https://www.linkedin.com/in/erarbazansari"
+                                target="_blank"
+                                ><i class="fab fa-linkedin"></i
+                            ></a>
                         </div>
                     </div>
                 </div>
                 <div class="footer-bottom">
-                    <p>&copy; 2024 BlogSpace. All rights reserved.</p>
+                    <a href="http://arbazansari.vercel.app" target="_blank"
+                        >Arbaz Ansari</a
+                    >
+                    <p>&copy; 2024 BlogLamp. All rights reserved.</p>
                 </div>
-            </div>
-        </footer>
-
+            </footer>
+        </div>
         <script src="js/theme.js"></script>
         <script src="js/auth.js"></script>
     </body>

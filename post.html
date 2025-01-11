@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Blog Post - BlogSpace</title>
+        <title>Blog Post - BlogLamp</title>
+        <link rel="stylesheet" href="./style/global.css" />
         <link rel="stylesheet" href="./style/post.css" />
         <link
             rel="stylesheet"
@@ -11,67 +12,88 @@
         />
     </head>
     <body>
-        <nav>
-            <div class="nav-container">
-                <a href="/" class="logo">BlogSpace</a>
-                <div class="nav-links">
-                    <a href="/">Home</a>
-                    <a href="/write.html">Write</a>
-                    <a href="/contact.html">Contact</a>
-                    <button id="theme-toggle" class="theme-toggle">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                </div>
-            </div>
-        </nav>
-
-        <main>
-            <div class="container">
-                <article class="blog-post">
-                    <div class="post-header">
-                        <h1 id="post-title"></h1>
-                        <div class="post-meta">
-                            <time id="post-date"></time>
-                            <span
-                                id="post-category"
-                                class="post-category"
-                            ></span>
-                        </div>
-                    </div>
-                    <div id="post-content" class="post-content"></div>
-                </article>
-                <button id="back-button">Back</button>
-            </div>
-        </main>
-
-        <footer>
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-section">
-                        <h3>BlogSpace</h3>
-                        <p>Share your stories with the world.</p>
-                    </div>
-                    <div class="footer-section">
-                        <h3>Quick Links</h3>
+        <div class="container">
+            <nav>
+                <div class="nav-container">
+                    <a href="/" class="logo">BlogLamp</a>
+                    <div class="nav-links">
                         <a href="/">Home</a>
                         <a href="/write.html">Write</a>
                         <a href="/contact.html">Contact</a>
+                        <button id="theme-toggle" class="theme-toggle">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+
+            <main>
+                <div class="container">
+                    <article class="blog-post">
+                        <div class="post-header">
+                            <h1 id="post-title"></h1>
+                            <div class="post-meta">
+                                <time id="post-date"></time>
+                                <span
+                                    id="post-category"
+                                    class="post-category"
+                                ></span>
+                            </div>
+                        </div>
+                        <div id="post-content" class="post-content"></div>
+                    </article>
+                    <button
+                        class="main-btn"
+                        onclick="window.location.href = '/';"
+                    >
+                        Back
+                    </button>
+                </div>
+            </main>
+
+            <footer>
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>BlogLamp</h3>
+                        <p>Share your stories with the world anonymous</p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <div class="footer-links">
+                            <a href="/">Home</a>
+                            <a href="/write.html">Write</a>
+                            <a href="/contact.html">Contact</a>
+                        </div>
                     </div>
                     <div class="footer-section">
                         <h3>Connect</h3>
                         <div class="social-links">
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-github"></i></a>
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a
+                                href="https://www.x.com/erarbazansari"
+                                target="_blank"
+                                ><i class="fab fa-twitter"></i
+                            ></a>
+                            <a
+                                href="https://www.github.com/erarbazansari"
+                                target="_blank"
+                                ><i class="fab fa-github"></i
+                            ></a>
+                            <a
+                                href="https://www.linkedin.com/in/erarbazansari"
+                                target="_blank"
+                                ><i class="fab fa-linkedin"></i
+                            ></a>
                         </div>
                     </div>
                 </div>
                 <div class="footer-bottom">
-                    <p>&copy; 2024 BlogSpace. All rights reserved.</p>
+                    <a href="http://arbazansari.vercel.app" target="_blank"
+                        >Arbaz Ansari</a
+                    >
+                    <p>&copy; 2024 BlogLamp. All rights reserved.</p>
                 </div>
-            </div>
-        </footer>
-
+            </footer>
+        </div>
         <script src="js/theme.js"></script>
         <script src="js/post.js"></script>
     </body>
