@@ -1,3 +1,14 @@
+async function getUsersData() {
+    // i want to get the from ../data/users.json
+    // fetch the data from the file
+    const data = await fetch("../data/users.json");
+    const users = await data.json();
+    console.log(users);
+    return users;
+}
+
+const users = getUsersData();
+
 // Auth state management
 function isLoggedIn() {
     return localStorage.getItem("user") !== null;

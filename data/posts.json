@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "userId": 1,
+        "author": "user.name",
+        "title": "post.title",
+        "category": "post.category",
+        "date": "new Date().toISOString()",
+        "content": "post.content",
+        "excerpt": "post.excerpt"
+    }
+]
