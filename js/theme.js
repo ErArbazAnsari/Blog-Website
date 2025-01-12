@@ -16,11 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
         updateThemeIcon(newTheme);
     });
 
-    // function updateThemeIcon(theme) {
-    //     const icon = themeToggle.querySelector("i");
-    //     icon.className = theme === "light" ? "fas fa-moon" : "fas fa-sun";
-    // }
-
     function updateThemeIcon(theme) {
         const themeToggle = document.getElementById("theme-toggle");
         if (themeToggle) {
@@ -32,17 +27,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    function toggleTheme() {
-        const currentTheme = htmlElement.getAttribute("data-theme");
-        const newTheme = currentTheme === "light" ? "dark" : "light";
-
-        htmlElement.setAttribute("data-theme", newTheme);
-        localStorage.setItem("theme", newTheme);
-        updateThemeIcon(newTheme);
-    }
-
     // Logout function
     function logout() {
+        const confirmation = confirm(
+            "If you logout, all your data will be lost. Are you sure you want to logout?"
+        );
+        if (!confirmation) {
+            return;
+        }
         localStorage.removeItem("user");
         localStorage.removeItem("blog_posts");
         window.location.href = "/logout.html";

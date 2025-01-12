@@ -4,20 +4,14 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Logout - BlogLamp</title>
+        <link rel="stylesheet" href="./style/global.css" />
         <style>
-            body {
-                font-family: Arial, sans-serif;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                background-color: #f4f4f4;
-                margin: 0;
-            }
             .logout-container {
                 text-align: center;
                 background: #fff;
                 padding: 20px;
+                margin: 2rem auto;
+                padding: 2rem;
                 border-radius: 8px;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             }
@@ -45,10 +39,74 @@
         </style>
     </head>
     <body>
-        <div class="logout-container">
-            <h1>You have been logged out</h1>
-            <p>Thank you for visiting our website.</p>
-            <a href="./index.html">Home Page</a>
+        <div class="container">
+            <nav>
+                <div class="nav-container">
+                    <a href="/" class="logo">BlogLamp</a>
+                    <div class="hamburger">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="nav-links">
+                        <a href="/" class="active">Home</a>
+                        <a href="/contact.html">Contact</a>
+                        <a href="/write.html">Write</a>
+                        <button id="theme-toggle" class="theme-toggle">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+            <main>
+                <div class="logout-container">
+                    <h1>You have been logged out</h1>
+                    <p>Thank you for visiting our website.</p>
+                    <a href="./index.html">Home Page</a>
+                </div>
+            </main>
+            <footer>
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>BlogLamp</h3>
+                        <p>Share your stories with the world.</p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <div class="footer-links">
+                            <a href="/">Home</a>
+                            <a href="/write.html">Write</a>
+                            <a href="/contact.html">Contact</a>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Connect</h3>
+                        <div class="social-links">
+                            <a
+                                href="https://www.x.com/erarbazansari"
+                                target="_blank"
+                                ><i class="fab fa-twitter"></i
+                            ></a>
+                            <a
+                                href="https://www.github.com/erarbazansari"
+                                target="_blank"
+                                ><i class="fab fa-github"></i
+                            ></a>
+                            <a
+                                href="https://www.linkedin.com/in/erarbazansari"
+                                target="_blank"
+                                ><i class="fab fa-linkedin"></i
+                            ></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <a href="http://arbazansari.vercel.app" target="_blank"
+                        >Arbaz Ansari</a
+                    >
+                    <p>&copy; 2024 BlogLamp. All rights reserved.</p>
+                </div>
+            </footer>
         </div>
     </body>
 </html>

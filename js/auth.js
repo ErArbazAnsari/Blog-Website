@@ -33,17 +33,6 @@ function getCurrentUser() {
     return JSON.parse(localStorage.getItem("user"));
 }
 
-function logout() {
-    const confirmDeleteAllData = confirm(
-        "If you logout, all data will be deleted. Are you sure?"
-    );
-    if (confirmDeleteAllData) {
-        localStorage.removeItem("user");
-        localStorage.removeItem("blog_posts");
-    }
-    window.location.href = "/login.html";
-}
-
 // Handle login form
 const loginForm = document.getElementById("login-form");
 if (loginForm) {
