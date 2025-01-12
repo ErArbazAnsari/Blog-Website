@@ -58,7 +58,7 @@ main {
 }
 
 .post-link {
-    color: var(--primary-color);
+    color: var(--text-color);
 }
 
 .posts-header h2 {
