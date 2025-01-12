@@ -15,6 +15,18 @@
     margin-bottom: 2rem;
 }
 
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 0 1rem;
+    }
+
+}
+
 .main-btn {
     background-color: var(--primary-color);
     border-radius: var(--radius);
@@ -43,6 +55,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .post-link {
@@ -54,6 +67,12 @@
     color: var(--text-color);
 }
 
+.posts-filter {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
 .posts-filter input,
 .posts-filter select {
     font-size: 1rem;
@@ -63,10 +82,76 @@
     margin-left: 0.5rem;
 }
 
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .posts-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .posts-filter {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .posts-filter input,
+    .posts-filter select {
+        width: calc(50% - 0.5rem);
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+}
+
 #posts-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
+}
+
+.post-footer {
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.post-card-content:hover .post-footer {
+    display: flex;
+}
+
+.post-footer .btn {
+    background-color: var(--primary-color);
+    color: var(--text-color-reverse);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.post-footer .btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.post-footer .delete-post {
+    color: var(--text-color);
+    cursor: pointer;
+    transition: color 0.3s;
+    opacity: 0.8;
+    font-size: 1.2rem;
+}
+
+.post-footer .delete-post:hover {
+    opacity: 1;
 }
 
 .post-card {

@@ -9,6 +9,13 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+@media (max-width: 768px) {
+    main {
+        padding: 0 1rem;
+    }
+
+}
+
 .editor-container h1 {
     margin-bottom: 1.5rem;
     font-size: 2rem;
