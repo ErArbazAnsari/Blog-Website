@@ -63,10 +63,10 @@ document.addEventListener("DOMContentLoaded", () => {
                         <div></div>
                     </div>
                     <div class="nav-links">
-                        <a href="/" class="home-nav-link">Home</a>
+                        <a href="/" class="home-nav-link" title="Home Page">Home</a>
                         <a href="/contact.html" class="contact-nav-link">Contact</a>
                         <a href="/write.html" class="write-btn write-nav-link">Write</a>
-                        <button id="theme-toggle" class="theme-toggle">
+                        <button id="theme-toggle" class="theme-toggle" title="Change Theme">
                         <i class="fas fa-moon"></i>
                         </button>
                         <button id="logout-btn" class="logout-btn" title="Logout">
@@ -85,11 +85,11 @@ document.addEventListener("DOMContentLoaded", () => {
                         <div></div>
                     </div>
                     <div class="nav-links">
-                        <a href="/" class="home-nav-link">Home</a>
+                        <a href="/" class="home-nav-link" title="Home Page">Home</a>
                         <a href="/contact.html" class="contact-nav-link">Contact</a>
                         <a href="/login.html" class="login-nav-link">Login</a>
                         <a href="/register.html" class="register-nav-link">Register</a>
-                        <button id="theme-toggle" class="theme-toggle">
+                        <button id="theme-toggle" class="theme-toggle" title="Change Theme">
                             <i class="fas fa-moon"></i>
                         </button>
                     </div>
