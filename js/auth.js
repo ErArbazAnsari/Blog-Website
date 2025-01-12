@@ -11,21 +11,6 @@ const getUsersData = async () => {
     }
 };
 
-// Save users data to users.json
-// const saveUsersData = async (users) => {
-//     try {
-//         await fetch("../server.js", {
-//             method: "POST",
-//             headers: {
-//                 "Content-Type": "application/json",
-//             },
-//             body: JSON.stringify(users),
-//         });
-//     } catch (error) {
-//         console.error("Error saving users data:", error);
-//     }
-// };
-
 // Fetch posts data from posts.json
 const getPostsData = async () => {
     try {
@@ -39,21 +24,6 @@ const getPostsData = async () => {
     }
 };
 
-// Save posts data to posts.json
-// const savePostsData = async (posts) => {
-//     try {
-//         await fetch("../data/posts.json", {
-//             method: "POST",
-//             headers: {
-//                 "Content-Type": "application/json",
-//             },
-//             body: JSON.stringify(posts),
-//         });
-//     } catch (error) {
-//         console.error("Error saving posts data:", error);
-//     }
-// };
-
 // Auth state management
 function isLoggedIn() {
     return localStorage.getItem("user") !== null;
@@ -64,7 +34,13 @@ function getCurrentUser() {
 }
 
 function logout() {
-    localStorage.removeItem("user");
+    const confirmDeleteAllData = confirm(
+        "If you logout, all data will be deleted. Are you sure?"
+    );
+    if (confirmDeleteAllData) {
+        localStorage.removeItem("user");
+        localStorage.removeItem("blog_posts");
+    }
     window.location.href = "/login.html";
 }
 
